@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>Patient Satisfaction Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <form name="myForm" onsubmit="return validateForm()">
+            <div class="p-3 border mt-4">
+                <div class="row pb-2">
+                    <h2 class="text-primary text-center">Patient Survey XYZ Hospital</h2>
+                </div>
+                <div class="mb-3">
+                    <label>Patient Name</label>
+                    <input type="text" id="Name" name="Name" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>File Number</label>
+                    <input type="text" asp-for="FileNo"  id="FileNo" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Hospital Unit</label>
+                    <select class="form-select" id="exampleSelect1" name="Unit">
+                        <option>Surgery</option>
+                        <option>Medicine</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Are you satisfied with overall treatment </label>
+                    <fieldset class="form-control" name="treatment">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="Very Satisfied">
+                            <label class="form-check-label" for="optionsRadios1">
+                                Very Satisfied
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="Satisfied">
+                            <label class="form-check-label" for="optionsRadios2">
+                                Satisfied
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="Not Satisfied">
+                            <label class="form-check-label" for="optionsRadios2">
+                                Not Satisfied
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="mb-3">
+                    <label>Comments</label>
+                    <textarea class="form-control" aria-label="With textarea" name="Comments"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label>Are you satisfied with medical facilities in the hospital :</label>
+                    <fieldset class="form-group" name="facilities">
+                        <legend class="mt-4">Checkboxes</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Very Satisfied"
+                                id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Very Satisfied
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Satisfied" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Satisfied
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Not Satisfied" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Not Satisfied
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <button type="submit" class="btn btn-outline-primary form-control">Submit</button>
+                </div>
+                <div class="col-md-3 col-6">
+                    <button type="reset" class="btn btn-outline-primary form-control">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function validateForm() {
+        let x = document.forms["myForm"]["Name"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        let a = document.forms["myForm"]["FileNo"].value;
+        if (a == "") {
+            alert("FileNo must be filled out");
+            return false;
+        }
+        let c = document.forms["myForm"]["treatment"].value;
+        if (c == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        let d = document.forms["myForm"]["Comments"].value;
+        if (d == "") {
+            alert("Comments must be filled out");
+            return false;
+        }
+  
+    }
+</script>
+</script>
+
+</html>
