@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghode ki naal Kunal</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row m-4">
+        <div class="col-md-6 mx-auto d-flex gap-1">
+          <div class="col-md-3">
+            <button
+              type="button"
+              value="cookie 1"
+              class="btn btn-outline-primary form-control"
+              onclick="SetCookie1();"
+            >
+              Set cookie1
+            </button>
+            <button
+              type="button"
+              value="cookie"
+              class="btn btn-outline-primary form-control"
+              onclick="SetCookie2();"
+            >
+              Set cookie2
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-outline-primary form-control" onclick="getCookie1()">
+              Get cookie1
+            </button>
+            <button type="button" class="btn btn-outline-primary form-control" onclick="getCookie2()">
+              Get cookie2
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-outline-primary form-control" onclick="DeleteCookie1()">
+              Delete cookie1
+            </button>
+            <button type="button" class="btn btn-outline-primary form-control">
+              Delete cookie2
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="col-md-3">
+            <button type="button" class="btn btn-outline-primary form-control" onclick="ShowAll()">
+              Shoiw all cookie
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let cookievalue ="Cookie 1";
+    let cookievalue2 = "Cookie 2";
+    function SetCookie1() {
+      document.cookie = "name=" + cookievalue;
+      alert("Setting Cookies 1: " + "name=" + cookievalue);
+    }
+    function SetCookie2() {
+      document.cookie = "name=" + cookievalue2;
+      alert("Setting Cookies 1: " + "name=" + cookievalue2);
+    }
+
+    function getCookie1() {
+    //   document.cookie = document.cookie =
+    //     "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+        document.cookie = "name=" + cookievalue;
+      alert("Get Cookies 1: " + "name=" + cookievalue);
+    }
+    function getCookie2() {
+        document.cookie = "name=" + cookievalue2;
+      alert("Get Cookies 1: " + "name=" + cookievalue2);
+    }
+    function DeleteCookie1() {
+      document.cookie = document.cookie =
+        "cookievalue=" + cookievalue+"; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+      alert("Delete Cookies 1: " + "name=" + cookievalue);
+    }
+
+    function ShowAll() {
+        document.cookie = "Cookie 1=" + cookievalue2+ "";
+      alert("Delete Cookies 1: " + "name=" + cookievalue2);
+    }
+  </script>
+</html>
